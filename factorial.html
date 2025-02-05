@@ -8,13 +8,23 @@
         <h1> Mi  WEB acerca de un factorial</h1>
         <script src="script-leer-numeros.js"></script>
         <script>
-        var factorial=1;
+        var factorial = 1;
           for(i=1 ; i=<numero; i++)
           {
             factorial = factorial*i;
           
           }
-          document.write(factorial);
+          document.write (factorial);
+
+           var factorial = 1; 
+            for (i=1; i<=numero; i++)
+                 {
+                     factorial = factorial * i;
+                     document.write ("<br>El factorial de " + i + " es: " + factorial);
+                 }
+  
+
+                     
           
           // Inicialización de variables, se pide al usuario que introduzca un numero para despues calcular el factorial.
           // Se crea una variable llamada numero y se le asigna el valor que haya introducido el usuario. Este valor representa el número cuyo factorial queremos calcular. 
