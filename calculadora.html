@@ -81,7 +81,23 @@
                 // Mostramos el texto con la operación y el resultado
                 resultado.textContent = ( num1 + " multiplicado por "+ num2 + "multiplicado por " + num3 es igual a "+ (num1*num2*num3));
             });
-         
+         // Configuramos qué pasa cuando se hace clic en el botón Restar
+            botonRestar.addEventListener('click', function() {
+                num1 = Number(numero1.value);
+                num2 = Number(numero2.value);
+                num3 = Number(numero3.value);
+                // Mostramos el texto con la operación y el resultado
+               resultado.textContent = (num1 + " restado a  " + num2 + "restado a " + num3 es igual a "+ (num1-num2-num3));
+            });
+                        /// Configuramos qué pasa cuando se hace clic en el botón Dividir
+            botonDividir.addEventListener('click', function() {
+                num1 = Number(numero1.value);
+                num2 = Number(numero2.value);
+                num3 = Number(numero3.value);
+
+                // Mostramos el texto con la operación y el resultado
+                resultado.textContent = ( num1 + " dividido por "+ num2 + "dividido por " + num3 es igual a "+ (num1/num2/num3));
+            });
         });
     </script>
 </body>
