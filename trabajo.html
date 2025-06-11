@@ -51,7 +51,7 @@
             color: #333;                      /* Color gris oscuro para buena lectura */
         }
 
-        /* Estilo para el mensaje de agregar */
+        /* Estilo para el mensaje de saludo */
         #mensaje {
             margin-top: 20px;                 /* Espacio encima del mensaje */
             font-size: 18px;                  /* Tamaño del texto del mensaje */
@@ -66,35 +66,33 @@
         <h1>Lista de tareas</h1>
 
         <!-- Campo de entrada para el nombre del usuario -->
-        <input type="text" id="entradaTarea" placeholder="Teclea tú tarea aquí"><br>
+        <input type="text" id="entradaNombre" placeholder="Teclea tus tareas aquí"><br>
 
-        <!-- Botón para generar agregar -->
-        <button id="botonSaludar">Agregar</button>
+        <!-- Botón para generar el saludo -->
+        <button id="botonSaludar">Apuntar</button>
 
         <!-- Área donde se mostrará el mensaje -->
         <div id="mensaje"></div>
     </div>
-
     <script>
         // Declaramos las variables que usaremos globalmente
         var nombre, mensajeDiv;
 
         // Esperamos a que se haga clic en el botón
-        document.getElementById('botonAgregar').addEventListener('click', function() {
+        document.getElementById('botonSaludar').addEventListener('click', function() {
 
             // Obtenemos el valor del input (lo que el usuario ha escrito)
             nombre = document.getElementById('entradaNombre').value;
-
             // Referencia al elemento donde mostraremos el mensaje
             mensajeDiv = document.getElementById('mensaje');
 
             // Si el usuario escribió algo, saludamos
             if (nombre) {
-                mensajeDiv.textContent = ("¡Agregado!");
+                mensajeDiv.textContent = (nombre);
             } 
-            // Si el campo está vacío, le pedimos que escriba su Tarea
+            // Si el campo está vacío, le pedimos que escriba su nombre
             else {
-                mensajeDiv.textContent = ("¡Dime tú Tarea para agregarla 😊!");
+                mensajeDiv.textContent = ("Apunta tus tareas!!");
             }
         });
     </script>
