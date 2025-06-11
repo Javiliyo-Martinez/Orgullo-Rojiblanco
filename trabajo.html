@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>¡Salúdame!</title>
+    <title>Lista de tareas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -39,54 +39,33 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-        h1 {
-            margin-bottom: 20px;
-            color: #333;
-        }
-
         #mensaje {
             margin-top: 20px;
-            font-size: 18px;
-            color: #444;
             text-align: left;
-        }
-
-        .tarea {
-            background-color: #eee;
-            padding: 8px;
-            margin: 5px 0;
-            border-radius: 5px;
         }
     </style>
 </head>
-
 <body>
     <div class="contenedor">
         <h1>Apunta aquí tus tareas</h1>
         <input type="text" id="entradaNombre" placeholder="Teclea tus tareas aquí"><br>
         <button id="botonSaludar">Apuntar</button>
-        <div id="mensaje"></div> <!-- Aquí se irán añadiendo las tareas -->
+        <div id="mensaje"></div>
     </div>
 
     <script>
-        var boton = document.getElementById('botonSaludar');
-        var entrada = document.getElementById('entradaNombre');
-        var mensajeDiv = document.getElementById('mensaje');
+        const boton = document.getElementById('botonSaludar');
+        const entrada = document.getElementById('entradaNombre');
+        const mensajeDiv = document.getElementById('mensaje');
 
         boton.addEventListener('click', function () {
-            var texto = entrada.value.trim();
+            const texto = entrada.value.trim();
 
             if (texto) {
-                // Creamos un nuevo elemento para la tarea
-                var nuevaTarea = document.createElement("div");
-                nuevaTarea.className = "tarea";
+                const nuevaTarea = document.createElement('div');
                 nuevaTarea.textContent = texto;
-
-                // Lo añadimos al final del div mensaje
                 mensajeDiv.appendChild(nuevaTarea);
-
-                // Limpiamos el input
-                entrada.value = "";
+                entrada.value = '';
             } else {
                 alert("¡Apunta una tarea!");
             }
