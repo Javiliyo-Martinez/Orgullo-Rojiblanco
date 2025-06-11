@@ -66,30 +66,27 @@
         <h1>Apunta aquí tus tareas</h1>
         <input type="text" id="entradaNombre" placeholder="Teclea tus tareas aquí"><br>
         <button id="botonSaludar">Apuntar</button>
-        <!-- Aquí irán apareciendo las tareas -->
-        <div id="mensaje"></div>
+        <div id="mensaje"></div> <!-- Aquí se mostrarán las tareas -->
     </div>
 
     <script>
-        // Referencias a elementos
         var boton = document.getElementById('botonSaludar');
         var entrada = document.getElementById('entradaNombre');
         var mensajeDiv = document.getElementById('mensaje');
 
-        boton.addEventListener('click', function() {
-            var nombre = entrada.value.trim(); // Quitamos espacios innecesarios
+        boton.addEventListener('click', function () {
+            var nombre = entrada.value.trim();
 
             if (nombre) {
-                // Creamos un nuevo div con la clase "tarea"
+                // Creamos una nueva tarea como un <div>
                 var nuevaTarea = document.createElement("div");
                 nuevaTarea.className = "tarea";
                 nuevaTarea.textContent = nombre;
 
-                // Lo añadimos debajo del anterior
+                // La añadimos al contenedor de tareas sin borrar lo anterior
                 mensajeDiv.appendChild(nuevaTarea);
 
-                // Limpiamos el input
-                entrada.value = "";
+                entrada.value = ""; // Limpiar input
             } else {
                 alert("¡Apunta una tarea!");
             }
