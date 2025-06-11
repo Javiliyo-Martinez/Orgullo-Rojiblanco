@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Lista de tareas</title>
+    <title>Tareas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,19 +36,12 @@
             background-color: white;
             padding: 30px 40px;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
         #mensaje {
             margin-top: 20px;
             text-align: left;
-        }
-
-        /* Asegurar que los párrafos en mensaje no tengan fondo ni padding extra */
-        #mensaje p {
-            background: none;
-            padding: 0;
-            margin: 2px 0;
         }
     </style>
 </head>
@@ -61,20 +54,18 @@
     </div>
 
     <script>
-        const boton = document.getElementById('botonSaludar');
-        const entrada = document.getElementById('entradaNombre');
-        const mensajeDiv = document.getElementById('mensaje');
+        document.getElementById('botonSaludar').addEventListener('click', function() {
+            var entrada = document.getElementById('entradaNombre');
+            var texto = entrada.value.trim();
+            var mensaje = document.getElementById('mensaje');
 
-        boton.addEventListener('click', function () {
-            const texto = entrada.value.trim();
-
-            if (texto) {
-                const nuevaTarea = document.createElement('p');
-                nuevaTarea.textContent = texto;
-                mensajeDiv.appendChild(nuevaTarea);
+            if (texto !== '') {
+                var p = document.createElement('p');
+                p.textContent = texto;
+                mensaje.appendChild(p);
                 entrada.value = '';
             } else {
-                alert("¡Apunta una tarea!");
+                alert('¡Apunta una tarea!');
             }
         });
     </script>
